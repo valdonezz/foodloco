@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Routes, Route, Link } from 'react-router-dom';
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -71,44 +71,54 @@ function Login() {
     return (
         <div className="col-md-12">
             <div className="card card-container">
-                <img
+               {/* <img
                     src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
                     alt="profile-img"
                     className="profile-img-card"
-                />
+                />*/}
 
                 <Form onSubmit={handleLogin} ref={form}>
                     <div className="form-group">
-                        <label htmlFor="username">Username</label>
                         <Input
                             type="text"
-                            className="form-control"
+                            className="form-control input-border"
                             name="username"
                             value={username}
                             onChange={onChangeUsername}
                             validations={[required]}
+                            placeholder="Username"
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Password</label>
                         <Input
                             type="password"
-                            className="form-control"
+                            className="form-control input-border"
                             name="password"
                             value={password}
                             onChange={onChangePassword}
                             validations={[required]}
+                            placeholder="Password"
                         />
                     </div>
 
-                    <div className="form-group">
-                        <button className="btn btn-primary btn-block" disabled={loading}>
+                    <div className="form-group m-4">
+                        <button className="btn btn-block btn-dark-blue" disabled={loading}>
                             {loading && (
                                 <span className="spinner-border spinner-border-sm"></span>
                             )}
                             <span>Login</span>
                         </button>
+                    </div>
+
+                    <div className="container d-flex flex-column justify-content-center">
+                        <div className="m-3 d-flex justify-content-center link-forgot">
+                            Forgot your password?
+                        </div>
+                        <Link to={"/register"} className="m-3 d-flex justify-content-center link-registration">
+                            Registrieren
+                        </Link>
+
                     </div>
 
                     {message && (

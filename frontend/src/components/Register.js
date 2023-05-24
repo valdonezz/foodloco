@@ -103,53 +103,48 @@ const Register = () => {
     return (
         <div className="col-md-12">
             <div className="card card-container">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                    alt="profile-img"
-                    className="profile-img-card"
-                />
-
                 <Form onSubmit={handleRegister} ref={form}>
                     {!successful && (
                         <div>
                             <div className="form-group">
-                                <label htmlFor="username">Username</label>
                                 <Input
                                     type="text"
-                                    className="form-control"
+                                    className="form-control input-border"
                                     name="username"
                                     value={username}
                                     onChange={onChangeUsername}
                                     validations={[required, vusername]}
+                                    placeholder="Username"
                                 />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="email">Email</label>
                                 <Input
                                     type="text"
-                                    className="form-control"
+                                    className="form-control input-border"
                                     name="email"
                                     value={email}
                                     onChange={onChangeEmail}
                                     validations={[required, validEmail]}
+                                    placeholder="Email"
                                 />
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="password">Password</label>
+
                                 <Input
                                     type="password"
-                                    className="form-control"
+                                    className="form-control input-border"
                                     name="password"
                                     value={password}
                                     onChange={onChangePassword}
                                     validations={[required, vpassword]}
+                                    placeholder="Password"
                                 />
                             </div>
 
-                            <div className="form-group">
-                                <button className="btn btn-primary btn-block">Sign Up</button>
+                            <div className="form-group m-4">
+                                <button className="btn btn-block btn-dark-blue">Sign Up</button>
                             </div>
                         </div>
                     )}

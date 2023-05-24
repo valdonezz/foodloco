@@ -34,13 +34,16 @@ const App = () => {
 
   return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
-            bezKoder
-          </Link>
+        <div className="container d-flex justify-content-center">
+          <img
+              src="logo.png"
+              alt="logo-img"/>
+        </div>
+          {currentUser && (
+        <nav className="navbar navbar-expand navbar-dark navbar-main">
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
+              <Link to={"/home"} className="nav-link text-white">
                 Home
               </Link>
             </li>
@@ -63,7 +66,7 @@ const App = () => {
 
             {currentUser && (
                 <li className="nav-item">
-                  <Link to={"/user"} className="nav-link">
+                  <Link to={"/user"} className="nav-link text-white">
                     User
                   </Link>
                 </li>
@@ -73,12 +76,12 @@ const App = () => {
           {currentUser ? (
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link to={"/profile"} className="nav-link">
+                  <Link to={"/profile"} className="nav-link text-white">
                     {currentUser.username}
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/login" className="nav-link" onClick={logOut}>
+                  <a href="/login" className="nav-link text-white" onClick={logOut}>
                     LogOut
                   </a>
                 </li>
@@ -86,19 +89,20 @@ const App = () => {
           ) : (
               <div className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link to={"/login"} className="nav-link">
+                  <Link to={"/login"} className="nav-link text-white">
                     Login
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/register"} className="nav-link">
+                  <Link to={"/register"} className="nav-link text-white">
                     Sign Up
                   </Link>
                 </li>
               </div>
           )}
         </nav>
+          )}
 
         <div className="container mt-3">
           <Routes>
