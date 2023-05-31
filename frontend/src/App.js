@@ -36,7 +36,7 @@ const App = () => {
       <div>
         <div className="container d-flex justify-content-center">
           <img
-              src="logo.png"
+              src="/logo.svg"
               alt="logo-img"/>
         </div>
           {currentUser && (
